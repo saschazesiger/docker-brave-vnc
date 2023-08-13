@@ -12,7 +12,7 @@ RUN apt-get update && \
 
 RUN curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
 RUN echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
-RUN apt update && apt install brave-browser
+RUN apt update && apt install brave-browser -y
 
 #Server Start
 CMD ["bash", "/opt/scripts/start.sh"]
